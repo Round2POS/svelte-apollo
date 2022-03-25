@@ -1,4 +1,4 @@
-import { gql, Observable } from "@apollo/client/core";
+import { gql, Observable } from "@apollo/client/core/index.js";
 import { subscribe } from "..";
 import { getClient, setClient } from "../context";
 import { getMock } from "../__fixtures__/mock";
@@ -21,7 +21,7 @@ test("should observe subscription", async () => {
 	setClient({
 		subscribe() {
 			return Observable.of({ data: 1 }, { data: 2 }, { data: 3 });
-		},
+		}
 	} as any);
 
 	const store = subscribe(NEW_MESSAGES);

@@ -1,4 +1,4 @@
-import { Observable } from "@apollo/client/core";
+import { Observable } from "@apollo/client/core/index.js";
 import { extensions } from "../observable";
 import { jest } from "@jest/globals";
 

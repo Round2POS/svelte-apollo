@@ -74,27 +74,27 @@
 
 <h1>svelte-apollo</h1>
 
-<label>Search <input type="search" bind:value="{search}" /></label>
+<label>Search <input type="search" bind:value={search} /></label>
 
 <ul>
-  {#if $books.loading}
-    <li>Loading...</li>
-  {:else if $books.error}
-    <li>ERROR: {$books.error.message}</li>
-  {:else}
-    {#each $books.data.books as book (book.id)}
-      <li>{book.title} by {book.author.name}</li>
-    {/each}
-  {/if}
+	{#if $books.loading}
+		<li>Loading...</li>
+	{:else if $books.error}
+		<li>ERROR: {$books.error.message}</li>
+	{:else}
+		{#each $books.data.books as book (book.id)}
+			<li>{book.title} by {book.author.name}</li>
+		{/each}
+	{/if}
 </ul>
 
-<button on:click="{reload}">Reload</button>
+<button on:click={reload}>Reload</button>
 
-<hr>
+<hr />
 
 <h2>Add Book</h2>
 
-<form on:submit|preventDefault="{handleSubmit}">
+<form on:submit|preventDefault={handleSubmit}>
 	<label>Title <input type="text" name="title" /></label>
 	<label>Author <input type="text" name="author" /></label>
 

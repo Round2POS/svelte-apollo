@@ -1,4 +1,4 @@
-import type { SubscriptionOptions } from "@apollo/client/core";
+import type { SubscriptionOptions } from "@apollo/client/core/index.js";
 import type { DocumentNode } from "graphql";
 import { getClient } from "./context";
 import { observableToReadable } from "./observable";

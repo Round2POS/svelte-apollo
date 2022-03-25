@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client/core";
+import { gql } from "@apollo/client/core/index.js";
 import { getClient, mutation, setClient } from "..";
 import { getMock, MockClient } from "../__fixtures__/mock";
 import { jest, test, expect } from "@jest/globals";

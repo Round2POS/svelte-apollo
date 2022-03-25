@@ -1,4 +1,4 @@
-import { ApolloError, Observable } from "@apollo/client/core";
+import { ApolloError, Observable } from "@apollo/client/core/index.js";
 import { GraphQLError } from "graphql";
 import { DataState, observableToReadable } from "../observable";
 import { read } from "../__fixtures__/read";
@@ -32,6 +32,6 @@ test("should skip initial loading status, if initial value is given", async () =
 		{ data: 1 } as DataState<number>
 	);
 
-	const values = (await read(readable)).map((result) => result.data);
+	const values = (await read(readable)).map(result => result.data);
 	expect(values).toEqual([1, 2, 3]);
 });
